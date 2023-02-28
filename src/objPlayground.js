@@ -56,4 +56,18 @@ const arrayGenerator = (type, object) => {
         return Object.entries(object);
     }
 };
+
+/*
+Só deixando isso aqui pq eu amo quando da pra fazer algo mais funcional
+const arrayGeneratorFactory = {
+  keys: (object) => Object.keys(object),
+  values: (object) => Object.values(object),
+  entries: (object) => Object.entries(object),
+};
+
+const arrayGenerator = (type, object) => {
+  const operation = arrayGeneratorFactory[type];
+  return operation(object);
+};
+*/
 module.exports = { calculator, arrayGenerator };

@@ -15,12 +15,14 @@
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
 
+// Essa questão parece piada, era só alterar nome da variável :beluga:
+// A iteração acontecia no mesmo loop que era reatribuido e depois encerrava antes do esperado
 const myCounter = () => {
-  var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
-    myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+  let myArray = [];
+  for (let counter1 = 0; counter1 <= 3; counter1 += 1) {
+    myArray.push(counter1);
+    for (let counter2 = 2; counter2 <= 3; counter2 += 1) {
+      myArray.push(counter2);
     }
   }
   return myArray;
