@@ -15,6 +15,12 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+// como esta função não tem nada dentro, apenas um retorno, o seu return é implicito, não precisando declarar retorno, é como se o retorno já existisse invisivelmente.
+const createStudent = (name) => ({
+  // uma arrow function que recebe um nome como parametro e retorna duas chaves, name contendo o name e
+    name,
+    // a chave feedback contendo uma função anonima que retorna uma string com uma frase besta
+    feedback: () => 'Eita pessoa boa!',
+});
 
 module.exports = createStudent;
