@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 // Importando os dois aqui
-const { getCharacter, characters } = require('../src/getCharacter');
+const { getCharacter, characters } = require('../src/getCharacter.js');
 
 /*
 A função getCharacter recebe uma string que representa o nome de um personagem e retorna um objeto contendo seu nome, sua classe e suas frases.
