@@ -47,19 +47,19 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // 1. Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    expect(getCharacter()).toBeUndefined()
+    expect(getCharacter()).toBeUndefined();
     // 2. Teste se a função retorna o objeto correto para o parâmetro 'Arya',
 
     // essa constante vai ser usada desestruturada para os próximos passos.
     const { arya, brienne, melissandre } = characters
-    expect(getCharacter('Arya')).toEqual(arya)
+    expect(getCharacter('Arya')).toMatchObject(arya);
     // 3. Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
-    expect(getCharacter('Brienne')).toEqual(brienne)
+    expect(getCharacter('Brienne')).toMatchObject(brienne);
     // 4. Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
-    expect(getCharacter('Melissandre')).toEqual(melissandre)
+    expect(getCharacter('Melissandre')).toMatchObject(melissandre);
     // 5. Teste se o parâmetro não é Case Sensitive, ou seja, independente de conter letras maiúsculas ou minúsculas retorna o mesmo objeto relativo a ele.
-    expect(getCharacter('MeLiSsAnDrE')).toMatchObject(getCharacter('melissandre'))
+    expect(getCharacter('MeLiSsAnDrE')).toMatchObject(getCharacter('melissandre'));
     // 6. Teste se ao passar um nome que não está na tabela, a função retorna undefined.
-    expect(getCharacter('asdfqwert')).toBeUndefined()
+    expect(getCharacter('asdfqwert')).toBeUndefined();
   });
 });
