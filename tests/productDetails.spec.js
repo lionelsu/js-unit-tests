@@ -47,6 +47,10 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(productDetails()).toContainEqual(expect.any(Object))
 
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
+    // Desestruturação profunda
+    //const [ { details: { productId: productId1 } }, { details: { productId: productId2 } } ] = productDetails('Produto1', 'Produto2');
+
+
     const [produto1, produto2] = productDetails('produto1', 'produto2');
     expect(produto1).not.toBe(produto2)
     // Teste se os dois productIds terminam com 123.
