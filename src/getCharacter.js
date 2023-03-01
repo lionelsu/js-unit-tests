@@ -70,4 +70,4 @@ const getCharacter = (name) => {
 };
 
 // Importei a constante do objeto
-module.exports = { getCharacter, characters };
+module.exports = getCharacter;

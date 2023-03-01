@@ -1,8 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
-// Importando os dois aqui
-const { getCharacter, characters } = require('../src/getCharacter.js');
+const getCharacter = require('../src/getCharacter.js');
 
 /*
 A função getCharacter recebe uma string que representa o nome de um personagem e retorna um objeto contendo seu nome, sua classe e suas frases.
@@ -51,14 +50,28 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
     // 2. Teste se a função retorna o objeto correto para o parâmetro 'Arya',
 
     // essa constante vai ser usada desestruturada para os próximos passos.
-    const { arya, brienne, melissandre } = characters
-    expect(getCharacter('Arya')).toMatchObject(arya);
+    expect(getCharacter('Arya')).toEqual({
+        name: 'Arya Stark',
+        class: 'Rogue',
+        phrases: ['Not today', 'A girl has no name.'],
+      }
+    );
     // 3. Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
-    expect(getCharacter('Brienne')).toMatchObject(brienne);
+    expect(getCharacter('Brienne')).toEqual({
+        name: 'Brienne Tarth',
+        class: 'Knight',
+        phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'],
+      }
+    );
     // 4. Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
-    expect(getCharacter('Melissandre')).toMatchObject(melissandre);
+    expect(getCharacter('Melissandre')).toEqual({
+        name: 'Melissandre',
+        class: 'Necromancer',
+        phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
+      }
+    );
     // 5. Teste se o parâmetro não é Case Sensitive, ou seja, independente de conter letras maiúsculas ou minúsculas retorna o mesmo objeto relativo a ele.
-    expect(getCharacter('MeLiSsAnDrE')).toMatchObject(getCharacter('melissandre'));
+    expect(getCharacter('MeLiSsAnDrE')).toEqual(getCharacter('melissandre'));
     // 6. Teste se ao passar um nome que não está na tabela, a função retorna undefined.
     expect(getCharacter('asdfqwert')).toBeUndefined();
   });
