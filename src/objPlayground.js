@@ -59,14 +59,14 @@ const arrayGenerator = (type, object) => {
 
 /*
 Só deixando isso aqui pq eu amo quando da pra fazer algo mais funcional
-const arrayGeneratorFactory = {
+const arrayGeneratorF = {
   keys: (object) => Object.keys(object),
   values: (object) => Object.values(object),
   entries: (object) => Object.entries(object),
 };
 
 const arrayGenerator = (type, object) => {
-  const operation = arrayGeneratorFactory[type];
+  const operation = arrayGeneratorF[type];
   return operation(object);
 };
 */

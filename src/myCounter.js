@@ -19,10 +19,10 @@
 // A iteração acontecia no mesmo loop que era reatribuido e depois encerrava antes do esperado
 const myCounter = () => {
   let myArray = [];
-  for (let counter1 = 0; counter1 <= 3; counter1 += 1) {
-    myArray.push(counter1);
-    for (let counter2 = 2; counter2 <= 3; counter2 += 1) {
-      myArray.push(counter2);
+  for (let counterA = 0; counterA <= 3; counterA += 1) {
+    myArray.push(counterA);
+    for (let counterB = 2; counterB <= 3; counterB += 1) {
+      myArray.push(counterB);
     }
   }
   return myArray;

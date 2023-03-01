@@ -69,4 +69,5 @@ const getCharacter = (name) => {
   return undefined;
 };
 
-module.exports = getCharacter;
+// Importei a constante do objeto
+module.exports = { getCharacter, characters };
