@@ -40,9 +40,76 @@
 
 // 4: Crie uma função `createMenu()` que, recebendo um objeto como parâmetro, retorna esse objeto no seguinte formato: 
 //  { fetchMenu: () => objetoPassadoPorParametro }.
+// Tentei separar todas as responsabilidades, talvez não fosse necessário que o fetchMenu fosse separado mas, eu achei estéticamente melhor assim
+const fetchMenu = (objectMenu) => objectMenu;
 
-const createMenu = () => {};
+// o método order vai receber também dois parâmetros mas, ele não vai usar a instância do consumption se chamado diretamente, ele precisa da menuFunctions para funcionar
+// em resumo ele procura nas chaves do objectMenu usando o método some para que verifique se cada chave passada no parâmetro contem o item que procuramos, se sim, o consumption é alimentado, se não o retorno é Item indisponível
+// Lembrando que se trata de uma função arrow function retornando uma função (currying), pode parecer meio confuso, pq é mesmo, mas entenda que depois dos primerios parametros passados, o paramentro dentro da função (string) pode ser usado em outras partes do código, o segredo em si está na chamada, após populado a chamada dentro do objeto menuFunctions irá inferir o parametro (string), pq os paramêtros iniciais do order já foram passados na construção da função menuFunctions
+const order = (objectMenu, consumption) => (string) => {
+  const menuItems = Object.keys(objectMenu);
+  if (menuItems.some((item) => objectMenu[item][string])) {
+  consumption.push(string);
+  return consumption;
+  }
+  return 'Item indisponível';
+};
 
+// Aqui o uso de um reduce aninhado, o primeiro itera sob os items existentes no consumption e o segundo itera sob os preços existentes nos valores do objectMenu, a notação || 0 é para que se caso o reduce passar por um valor que seja undefined o valor somado seja 0, evitando retornos NaN. Talvez fosse melhor fazer isso com um ternário mas o lint não deixa.
+const pay = (objectMenu, consumption) => () => {
+  const tax = 1.1;
+  const menuValues = Object.values(objectMenu);
+  const orderItem = consumption.reduce((acc, item) => {
+    const itemPrice = menuValues.reduce((price, category) => price + (category[item] || 0), 0);
+    return acc + itemPrice;
+  }, 0);
+  const totalPrice = orderItem * tax;
+  return totalPrice;
+};
+
+// Esta função vai desestruturar o objectMenu para espalhar entre as propriedades do retorno, esta função também vai fazer a chamada do array vazio para guardar os itens de consumo.
+const menuFunctions = ({ objectMenu }) => {
+  const consumption = [];
+  return {
+    fetchMenu: fetchMenu(objectMenu),
+    consumption,
+    order: order(objectMenu, consumption),
+    pay: pay(objectMenu, consumption),
+  };
+};
+
+// Por fim, a função responsável por fazer todo o resto do trabalho e chamar todas as outras funções. Usando o spread operator para espalhar suas propriedades no retorno e desestruturando o objectMenu para que cada chamada referencie a um novo objeto.
+const createMenu = (objectMenu) => ({
+  ...menuFunctions({ objectMenu }),
+});
+
+/*
+const createMenu = (objectMenu) => {
+  const consumption = [];
+
+  return {
+    fetchMenu: () => objectMenu,
+    consumption,
+    order: (string) => {
+      const menuItems = Object.keys(objectMenu);
+      if (menuItems.some((item) => objectMenu[item][string])) {
+        consumption.push(string);
+        return consumption;
+      }
+      return 'Item indisponível';
+    },
+    pay: () => {
+      const tax = 1.1;
+      const orderItem = consumption.reduce((acc, item) => {
+        const itemPrice = Object.values(objectMenu).reduce((price, category) => price + (category[item] || 0), 0);
+        return acc + itemPrice;
+      }, 0);
+      const totalPrice = orderItem * tax;
+      return totalPrice;
+    },
+  };
+};
+*/
 // Faça o item 5 no arquivo tests/restaurant.spec.js
 
 // 6: Adicione ao objeto retornado por `createMenu()` uma chave de nome `consumption` que, como valor inicial, tem um array vazio.
