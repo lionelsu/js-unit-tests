@@ -2,12 +2,10 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/lionelsu/js-unit-tests?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/lionelsu/js-unit-tests?style=for-the-badge)
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+
+Este projeto foi construído em um ambiente acadêmico e tem a intenção de atender a propósitos educacionais.
+
+# Habilidades desenvolvidas
+
+Este projeto é focado em testes utilizando a biblioteca Jest, juntamente com as linguágens e práticas do JavaScript, ES6, TDD (Test Driven Development) e DDD (Domain Driven Design) através de exemplos práticos e exercícios.
+
