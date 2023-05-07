@@ -7,5 +7,4 @@ Este projeto foi construído em um ambiente acadêmico e tem a intenção de ate
 
 # Habilidades desenvolvidas
 
-Este projeto é focado em testes utilizando a biblioteca Jest, juntamente com as linguágens e práticas do JavaScript, ES6, TDD (Test Driven Development) e DDD (Domain Driven Design) através de exemplos práticos e exercícios.
-
+Este projeto é focado em testes utilizando a biblioteca Jest, juntamente com as linguágens e práticas do JavaScript, ES6, TDD (Test Driven Development) e DDD (Domain Driven Design) através de e exercícios práticos.
