@@ -1,4 +1,7 @@
-# :construction: README em construção ! :construction:
+# JS Unit Tests
+
+![GitHub repo size](https://img.shields.io/github/repo-size/lionelsu/js-unit-tests?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/lionelsu/js-unit-tests?style=for-the-badge)
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto.
 É essencial que você preencha esse documento por conta própria, ok?
